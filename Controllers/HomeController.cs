@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using DetectiveAgency.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using DetectiveAgency.Models;
+using System.Diagnostics;
 
 namespace DetectiveAgency.Controllers
 {
@@ -22,6 +17,7 @@ namespace DetectiveAgency.Controllers
         {
             return View();
         }
+
         public IActionResult About()
         {
             return View();
@@ -31,12 +27,28 @@ namespace DetectiveAgency.Controllers
         {
             return View();
         }
+
         [HttpGet]
         public IActionResult CalcPay()
         {
-            ViewBag.Salary = 0;
+            ViewBag.Salary = 0m;
             return View();
         }
+
+        [HttpPost]
+        public IActionResult CalcPay(Employee model)
+        {
+            if (ModelState.IsValid)
+            {
+                ViewBag.Salary = model.CalcSalary();
+            }
+            else
+            {
+                ViewBag.Salary = 0m;
+            }
+            return View(model); // returns Views/Home/CalcPay.cshtml with the model
+        }
+
         public IActionResult MainOfficeEmployees()
         {
             return View();
@@ -52,5 +64,7 @@ namespace DetectiveAgency.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
     }
 }

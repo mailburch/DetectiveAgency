@@ -1,16 +1,84 @@
 ﻿@{
-    ViewData["Title"] = "About XYZ ";
+    ViewData["Title"] = "About XYZ";
 }
-    <article>
-        <h2>XYZ Detective Agency</h2>
 
+<!-- Hero header -->
+<div class="row">
+    <div class="col-12">
+        <div class="p-4 p-md-5 mb-4 bg-dark text-white rounded-3">
+            <h1 class="display-5 mb-1">XYZ Detective Agency</h1>
+            <p class="lead mb-0">Discreet. Thorough. Since 1960.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Content -->
+<article class="row g-4 align-items-start">
+    <!-- Images column -->
+    <div class="col-md-6 order-md-2">
+        <img src="~/Images/detective.jpg"
+             alt="Detective on a case"
+             class="img-fluid rounded shadow-sm" />
+
+        <figure class="mt-3 text-center">
+            <img src="~/Images/scooby-scrappy.jpg"
+                 alt="Scooby & Scrappy"
+                 class="img-thumbnail rounded-circle"
+                 style="width:220px;" />
+            <figcaption class="small text-muted mt-2">
+                Founders: Scooby &amp; Scrappy Doo
+            </figcaption>
+        </figure>
+    </div>
+
+    <!-- Text + stats column -->
+    <div class="col-md-6 order-md-1">
+        <h2 class="h3 mb-3">About Our Agency</h2>
         <p>
-            Our agency was founded in 1960 by Scooby and Scrappy Doo.
-            The agency expanded in the 1980's across the United States and is now the top
-            agency in the midwest.
+            Our agency was founded in 1960 by Scooby and Scrappy Doo. The agency expanded
+            in the 1980s across the United States and is now the top agency in the Midwest.
         </p>
         <p>
-            In 2000, the agency expanded to Europe and in 2020, the agency will also be
-            in Africa and Austrailia.
+            In 2000, the agency expanded to Europe and in 2020, the agency expanded to
+            Africa and Australia.
         </p>
-    </article>
+
+        <!-- Quick stats -->
+        <div class="row row-cols-2 g-3 mt-2">
+            <div class="col">
+                <div class="p-3 bg-primary text-white rounded text-center">
+                    <div class="fw-bold">Founded</div>
+                    <div>1960</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 bg-success text-white rounded text-center">
+                    <div class="fw-bold">Regions</div>
+                    <div>US • EU • AF</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 bg-info text-dark rounded text-center">
+                    <div class="fw-bold">Specialty</div>
+                    <div>Corporate &amp; Private</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 bg-warning text-dark rounded text-center">
+                    <div class="fw-bold">HQ</div>
+                    <div>Traverse City, MI</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTAs -->
+        <div class="mt-4">
+            <a class="btn btn-primary me-2" asp-controller="Home" asp-action="Contact">
+                Contact Us
+            </a>
+            <a class="btn btn-outline-secondary" asp-controller="Home" asp-action="MainOfficeEmployees">
+                Meet the Team
+            </a>
+        </div>
+    </div>
+</article>

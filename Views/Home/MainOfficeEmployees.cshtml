@@ -1,34 +1,66 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "ABC Corporation Staff";
+
     string[] staff = { "Freddie Flintstone", "Barney Rubble", "Betty Rubble", "Wilma Flintstone" };
-    int staffLen = staff.Length;
     string[] managers = { "Pebbles Flintstone", "Johnny Quest", "Shaggy Rogers" };
-    int managerLen = managers.Length;
     string[] officers = { "Scooby Doo", "Astro Jetson", "Scrappy Doo" };
-    int officerLen = officers.Length;
-    var x = 0;
 }
-<hr />
-<img src="~/Images/detectives.jpg" alt="xyz detectives" style="float:right;width:200px;
-outline:5px solid black;outline-offset:10px;" />
-<h2>XYZ Detective Agency Staff</h2>
-@for (x = 0; x < staffLen; x++)
-{<p>@staff[x]</p>}
-<hr />
-<h2>XYZ Detective Agency Managers</h2>
-@foreach (var person in managers)
-{
-    <p>@person</p>
-}
-<hr />
-<h2>XYZ Detective Agency Corporate Office</h2>
-@{
-    x = 0;
-    while (x < officerLen)
-    {
-        <p>@officers[x]</p>
-        x += 1;
-    }
-} 
-<hr />
+
+<!-- Page Heading -->
+<div class="p-4 mb-4 bg-primary text-white rounded">
+    <h2 class="mb-0">XYZ Detective Agency Staff Directory</h2>
+</div>
+
+<!-- Staff Table -->
+<h3>Staff</h3>
+<table class="table table-striped table-hover bg-light">
+    <thead>
+        <tr>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var person in staff)
+        {
+            <tr>
+                <td>@person</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Managers Table -->
+<h3>Managers</h3>
+<table class="table table-bordered table-dark table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var person in managers)
+        {
+            <tr>
+                <td>@person</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Officers Table -->
+<h3>Corporate Officers</h3>
+<table class="table table-sm table-hover bg-info-subtle">
+    <thead>
+        <tr>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var person in officers)
+        {
+            <tr>
+                <td>@person</td>
+            </tr>
+        }
+    </tbody>
+</table>
